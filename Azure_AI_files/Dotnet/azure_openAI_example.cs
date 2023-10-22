@@ -1,7 +1,7 @@
 using Azure.AI.OpenAI;
 
 // Initialize the Azure OpenAI client
-OpenAIClient client = new OpenAIClient(new Uri(oaiEndpoint), new AzureKeyCredential(oaiKey));
+OpenAIClient client = new OpenAIClient();
 
 // Build completion options object
 ChatCompletionsOptions chatCompletionsOptions = new ChatCompletionsOptions()
