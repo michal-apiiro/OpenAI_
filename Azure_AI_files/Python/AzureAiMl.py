@@ -16,7 +16,7 @@ def create_ml_client(subscription_id, resource_group, workspace):
     """
     try:
         # Create MLClient with Azure Identity DefaultAzureCredential
-        ml_client = MLClient(DefaultAzureCredential(), subscription_id, resource_group, workspace)
+        ml_client = MLClient()
         return ml_client
     except Exception as e:
         raise Exception("Failed to create MLClient: " + str(e))
