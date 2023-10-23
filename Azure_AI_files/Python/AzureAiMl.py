@@ -10,7 +10,7 @@ class AzureMLClient:
 
     def _create_ml_client(self):
         try:
-            ml_client = MLClient(DefaultAzureCredential(), self.subscription_id, self.resource_group, self.workspace)
+            ml_client = MLClient()
             return ml_client
         except Exception as e:
             raise Exception("Failed to create MLClient: " + str(e))
