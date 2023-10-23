@@ -1,4 +1,5 @@
-from azure.ai.ml import MLClient
+import azure.ai.ml
+from azure.ai.ml.MLClient import *
 from azure.identity import DefaultAzureCredential
 
 class AzureMLClient:
