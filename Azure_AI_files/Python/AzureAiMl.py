@@ -1,6 +1,15 @@
+import azure
 from azure.ai.ml import MLClient 
 from azure.identity import DefaultAzureCredential
-       
+
+class AzureMLClient:
+    def __init__(self, subscription_id, resource_group, workspace):
+        self.subscription_id = subscription_id
+        self.resource_group = resource_group
+        self.workspace = workspace
+        
+   
+
 if __name__ == "__main__":
     subscription_id = "your_subscription_id"
     resource_group = "your_resource_group"
