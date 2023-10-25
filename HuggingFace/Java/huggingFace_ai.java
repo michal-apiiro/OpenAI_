@@ -1,4 +1,5 @@
-package OpenAI_.HuggingFace.Java;
+package ai.djl.huggingface.tokenizers;
+
 import ai.djl.ModelException;
 import ai.djl.huggingface.translator.QuestionAnsweringTranslatorFactory;
 import ai.djl.inference.Predictor;
@@ -7,7 +8,13 @@ import ai.djl.repository.zoo.Criteria;
 import ai.djl.repository.zoo.ZooModel;
 import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
+import ai.djl.huggingface.tokenizers.HuggingFaceTokenizer;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
+tokenizer = HuggingFaceTokenizer.newInstance(Paths.get(path));
+ 
 import java.io.IOException;
 
 public final class QuestionAnswering {
