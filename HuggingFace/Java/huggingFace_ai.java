@@ -9,14 +9,11 @@ import ai.djl.repository.zoo.ZooModel;
 import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 import ai.djl.huggingface.tokenizers.HuggingFaceTokenizer;
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Arrays;
 
-tokenizer = HuggingFaceTokenizer.newInstance(Paths.get(path));
+
+
+
  
-import java.io.IOException;
-
 public final class QuestionAnswering {
 
     private QuestionAnswering() {}
@@ -37,7 +34,8 @@ public final class QuestionAnswering {
                         .optTranslatorFactory(new QuestionAnsweringTranslatorFactory())
                         .optProgress(new ProgressBar())
                         .build();
-
+                        
+        tokenizer = HuggingFaceTokenizer.newInstance(Paths.get(path));
         try (ZooModel<QAInput, String> model = criteria.loadModel();
                 Predictor<QAInput, String> predictor = model.newPredictor()) {
             QAInput input = new QAInput(question, paragraph);
