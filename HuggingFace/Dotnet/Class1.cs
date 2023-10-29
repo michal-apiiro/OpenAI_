@@ -1,12 +1,9 @@
-using HuggingFace;
+﻿using HuggingFace;
 
-namespace tryAGI.OpenAI.IntegrationTests;
-
-[TestClass]
-public class GeneralTests
+namespace example;
+public class ExampleModule : HuggingFaceModule
 {
-    [TestMethod]
-    public async Task Generate()
+     public async Task Generate()
     {
         var apiKey =
             Environment.GetEnvironmentVariable("HUGGINGFACE_API_KEY") ??
