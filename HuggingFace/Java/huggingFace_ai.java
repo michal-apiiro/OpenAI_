@@ -10,41 +10,16 @@ import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 import ai.djl.huggingface.tokenizers.HuggingFaceTokenizer;
 
-public final class QuestionAnswering {
+public class HuggingFace {
 
-    private QuestionAnswering() {}
-
-    public static void main(String[] args) throws IOException, ModelException, TranslateException {
+  public static void main(String[] args) {
         String question = "When did BBC Japan start broadcasting?";
         String paragraph =
                 "BBC Japan was a general entertainment Channel. "
                         + "Which operated between December 2004 and April 2006. "
                         + "It ceased operations after its Japanese distributor folded.";
 
-        Criteria<QAInput, String> criteria =
-                Criteria.builder()
-                        .setTypes(QAInput.class, String.class)
-                        .optModelUrls(
-                                "djl://ai.djl.huggingface.pytorch/deepset/minilm-uncased-squad2")
-                        .optEngine("PyTorch")
-                        .optTranslatorFactory(new QuestionAnsweringTranslatorFactory())
-                        .optProgress(new ProgressBar())
-                        .build();
-
-        try (HuggingFaceTokenizer tokenizer = 
-                HuggingFaceTokenizer.builder()
-                        .optTokenizerName("bert-base-cased")
-                        .optAddSpecialTokens(false)
-                        .build()) {
-            for (int i = 0; i < testIds.length; ++i) {
-                String ret = tokenizer.decode(testIds[i]);
-                Assert.assertEquals(ret, expectedDecodedNoSpecialTokens[i]);
-                ret = tokenizer.decode(testIds[i], false);
-                Assert.assertEquals(ret, expectedDecodedWithSpecialTokens[i]);
-            }
-        }
-
-        tokenizer = HuggingFaceTokenizer.newInstance(Paths.get(path));
+        HuggingFaceTokenizer tokenizer = HuggingFaceTokenizer.newInstance(Paths.get(path));
         try (ZooModel<QAInput, String> model = criteria.loadModel();
                 Predictor<QAInput, String> predictor = model.newPredictor()) {
             QAInput input = new QAInput(question, paragraph);
