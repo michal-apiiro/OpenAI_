@@ -8,6 +8,7 @@ import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 import ai.djl.huggingface.tokenizers.HuggingFaceTokenizer;
 
+
 public class Huggingfacesomething {
 
   public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Huggingfacesomething {
                 "BBC Japan was a general entertainment Channel. "
                         + "Which operated between December 2004 and April 2006. "
                         + "It ceased operations after its Japanese distributor folded.";
-
+        tokenizer = HuggingFaceTokenizer.newInstance(Paths.get(path));
         HuggingFaceTokenizer tokenizer = new HuggingFaceTokenizer.newInstance(Paths.get(path));
         try (ZooModel<QAInput, String> model = criteria.loadModel();
                 Predictor<QAInput, String> predictor = model.newPredictor()) {
