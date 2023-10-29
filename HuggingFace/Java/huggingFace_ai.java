@@ -1,8 +1,6 @@
 package ai.djl.huggingface.tokenizers;
 
-import ai.djl.ModelException;
 import ai.djl.huggingface.translator.QuestionAnsweringTranslatorFactory;
-import ai.djl.inference.Predictor;
 import ai.djl.modality.nlp.qa.QAInput;
 import ai.djl.repository.zoo.Criteria;
 import ai.djl.repository.zoo.ZooModel;
@@ -10,7 +8,7 @@ import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 import ai.djl.huggingface.tokenizers.HuggingFaceTokenizer;
 
-public class HuggingFace {
+public class Huggingfacesomething {
 
   public static void main(String[] args) {
         String question = "When did BBC Japan start broadcasting?";
@@ -19,7 +17,7 @@ public class HuggingFace {
                         + "Which operated between December 2004 and April 2006. "
                         + "It ceased operations after its Japanese distributor folded.";
 
-        HuggingFaceTokenizer tokenizer = HuggingFaceTokenizer.newInstance(Paths.get(path));
+        HuggingFaceTokenizer tokenizer = new HuggingFaceTokenizer.newInstance(Paths.get(path));
         try (ZooModel<QAInput, String> model = criteria.loadModel();
                 Predictor<QAInput, String> predictor = model.newPredictor()) {
             QAInput input = new QAInput(question, paragraph);
