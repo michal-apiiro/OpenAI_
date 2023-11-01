@@ -98,3 +98,5 @@ if __name__ == '__main__':
     args = parse_args()
     runner = PromptRunner(args.prompt, args.repo_path, args.keywords, args.spreadsheet_id, args.append)
     runner.run()
+    get_call = get_openai_callback()
+    new_chat = ChatOpenAI()
