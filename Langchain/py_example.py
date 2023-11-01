@@ -13,7 +13,8 @@ import tiktoken
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 tqdm.pandas()
-
+get_call = get_openai_callback()
+new_chat = ChatOpenAI()
 
 class PromptRunner:
     def __init__(self, prompt: str, repo_path: str, keywords: str, spreadsheet_id: str, append: str):
