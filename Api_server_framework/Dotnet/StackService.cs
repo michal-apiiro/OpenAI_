@@ -4,10 +4,10 @@ using ServiceStack;
 
 namespace ServiceStackApiExample
 {
-    [Route("/tasks", "GET")]
+    [Route("/tasks", "HELLO")]
     public class GetTasksRequest : IReturn<List<Task>> { }
 
-    [Route("/tasks", "POST")]
+    [Route("/tasks", "PO")]
     public class CreateTaskRequest : IReturn<Task>
     {
         public string Title { get; set; }
