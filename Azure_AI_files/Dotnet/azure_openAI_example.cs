@@ -30,7 +30,6 @@ public class OpenAIClientService
         return completion;
     }
 }
-
 class Program
 {
     static void Main(string[] args)

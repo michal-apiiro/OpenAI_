@@ -7,7 +7,6 @@ class AzureMLClient:
         self.resource_group = resource_group
         self.workspace = workspace
         
-   
 
 if __name__ == "__main__":
     subscription_id = "your_subscription_id"

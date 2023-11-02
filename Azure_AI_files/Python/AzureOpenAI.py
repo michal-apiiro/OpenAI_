@@ -12,7 +12,6 @@ input_data = {
     "language": "en",  
     "text": "What is the capital of Italy?",  
 }  
-  
 # Send the request to the Azure OpenAI API  
 response = client.predict(input_data)  
   
