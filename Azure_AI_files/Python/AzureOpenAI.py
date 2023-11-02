@@ -1,4 +1,3 @@
-import os  
 from azure.openai import OpenAIClient  
 from azure.core.credentials import AzureKeyCredential  
   
