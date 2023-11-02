@@ -3,6 +3,7 @@ from azure.openai import OpenAIClient
 from azure.core.credentials import AzureKeyCredential  
   
 # Set up the Azure OpenAI client  
+client_ai= OpenAIClient()  
 api_key = os.environ["AZURE_OPENAI_API_KEY"]  
 endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]  
 client = OpenAIClient(AzureKeyCredential(api_key), endpoint)  
