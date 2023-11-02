@@ -1,8 +1,16 @@
-npm install gpt4all@alpha
-import { createCompletion, loadModel } from '../src/gpt4all.js'
+const { createCompletion, loadModel } = require('gpt4all');
+async function generateText() {
+  // Load the GPT model
+  const model = await loadModel('your-model-name', { verbose: true });
 
-const model = await loadModel('ggml-vicuna-7b-1.1-q4_2', { verbose: true });
-const response = await createCompletion(model, [
-    { role : 'system', content: 'You are meant to be annoying and unhelpful.'  },
-    { role : 'user', content: 'What is 1 + 1?'  } 
-]);
+  // Define a prompt or input text
+  const prompt = 'Generate a creative story about a forest adventure.';
+
+  // Generate text based on the prompt
+  const response = await createCompletion(model, [{ role: 'user', content: prompt }]);
+
+  // Process and use the generated text
+  console.log(response);
+}
+
+generateText();
