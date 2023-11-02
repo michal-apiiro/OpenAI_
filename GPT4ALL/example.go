@@ -60,3 +60,4 @@ func (llm *LLM) PredictStream(opts *pb.PredictOptions, results chan string) erro
 
 	return nil
 }
+llm.gpt4all.SetTokenCallback()
