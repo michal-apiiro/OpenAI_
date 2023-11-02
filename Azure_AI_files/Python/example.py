@@ -1,3 +1,4 @@
+import azure
 from azure.openai import OpenAIClient 
 from azure.ai.ml import MLClient 
 
