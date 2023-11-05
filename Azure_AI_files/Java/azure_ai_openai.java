@@ -3,7 +3,15 @@ package OpenAI_.Azure_AI_files.Java;
 import com.azure.ai.openai.OpenAIClient;
 import com.azure.ai.openai.OpenAIAsyncClient;
 import com.azure.ai.OpenAIClientBuilder;
-
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.core.SdkBytes;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.sagemakerruntime.SageMakerRuntimeClient;
+import software.amazon.awssdk.services.sagemakerruntime.model.InvokeEndpointRequest;
+import software.amazon.awssdk.services.sagemakerruntime.model.InvokeEndpointResponse;
 
 public class AzureOpenAIIntegration {
 
@@ -12,6 +20,11 @@ public class AzureOpenAIIntegration {
         String textAnalyticsEndpoint = "YOUR_TEXT_ANALYTICS_ENDPOINT";
         String textAnalyticsApiKey = "YOUR_TEXT_ANALYTICS_API_KEY";
 
+        SageMakerRuntimeClient runtime = SageMakerRuntimeClient.builder().credentialsProvider(profile)
+				.region(Region.US_EAST_1).build();
+
+        SageMakerRuntimeClient runtime_ = SageMakerRuntimeClient();
+        SageMakerRuntimeClient runtime_2 = SageMakerRuntimeClient.bulider();
         OpenAIClient textAnalyticsClient = new OpenAIClient()
             .endpoint(textAnalyticsEndpoint)
             .credential(new TextAnalyticsApiKeyCredential(textAnalyticsApiKey))
