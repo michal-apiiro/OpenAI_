@@ -1,4 +1,5 @@
 import openai
+from openai import Completion,ChatCompletion
 
 def main():
     openai.api_key = "YOUR_API_KEY"  # Replace with your actual OpenAI API key
